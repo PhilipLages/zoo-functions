@@ -4,16 +4,14 @@ const { species } = data;
 
 function countAnimals(animal) {
   if (!animal) {
-    return species.reduce((accSpecies, currSpecies) => {
-      accSpecies[currSpecies.name] = currSpecies.residents.length;
-      return accSpecies;
+    return species.reduce((acc, curr) => {
+      acc[curr.name] = curr.residents.length;
+      return acc;
     }, {});
   } if (!animal.sex) return species.find(({ name }) => animal.specie === name).residents.length;
 
-  return species.find(({ name }) => animal.specie === name).residents.reduce((acc, curr) => {
-    acc += (curr.sex === animal.sex) ? 1 : 0;
-    return acc;
-  }, 0);
+  return species.find(({ name }) => animal.specie === name).residents
+    .filter((resident) => resident.sex === animal.sex).length;
 }
 
 module.exports = countAnimals;
