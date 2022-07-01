@@ -18,10 +18,8 @@ function getEmployeesCoverage(employeeCoverage) {
   const objToArray = Object.entries(employeeCoverage)[0];
   const name = getEmployees().find((employee) => employee.fullName.includes(objToArray[1]));
   const id = getEmployees().find((employee) => employee.id.includes(objToArray[1]));
+  if (!name && !id) throw new Error('Informações inválidas');
   return (objToArray[0] === 'name') ? name : id;
-  // if (!name || !id) throw new Error(/^Informações inválidas$/);
 }
-
-// console.log(getEmployeesCoverage({ name: 'Sharonda' }));
 
 module.exports = getEmployeesCoverage;
