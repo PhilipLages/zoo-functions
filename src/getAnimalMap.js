@@ -50,8 +50,7 @@ const getSpeciesBySex = (options) => species.reduce((acc, curr1) => {
 }, {});
 
 function getAnimalMap(options) {
-  if (!options) return getSpeciesByLocation();
-  if (!exist(options, 'includeNames')) return getSpeciesByLocation();
+  if (!options || !exist(options, 'includeNames')) return getSpeciesByLocation();
   if (exist(options, 'includeNames') && exist(options, 'sex')) return getSpeciesBySex(options);
   return getSpecies(options);
 }
