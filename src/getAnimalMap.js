@@ -19,11 +19,7 @@ const getNamesBySex = (specieName, whichSex) => species.find(({ name }) => name 
     return acc;
   }, []);
 
-const exist = (options, string) => {
-  const getOptionsKeys = Object.keys(options);
-  const func = getOptionsKeys.includes(string);
-  return func;
-};
+const exist = (options, string) => Object.keys(options).includes(string);
 
 const getSpecies = (options) => species.reduce((acc, curr1) => {
   acc[curr1.location] = species.reduce((acc2, curr2) => {
