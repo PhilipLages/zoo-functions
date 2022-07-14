@@ -1,0 +1,26 @@
+{
+  "name": "zoo-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilipLages/zoo-functions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhilipLages/zoo-functions/issues"
+  },
+  "homepage": "https://github.com/PhilipLages/zoo-functions#readme",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
+}
